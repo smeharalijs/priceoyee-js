@@ -159,7 +159,7 @@
     justify-content: space-between;
 }
 .product-card .buttons .cartbtn{
-    background-color: #00c391;
+    background-color: #007BFF;
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -169,13 +169,13 @@
     font-weight: 600;
 }
 .product-card .buttons .buybtn{
-    border: 2px solid #00c391;
+    border: 2px solid #007BFF;
     border-radius: 30px;
     background-color: #fff;
     font-size: 12px;
     padding: 8px 15px;
     cursor: pointer;
-    color: #00c391;
+    color: #007BFF;
     font-weight: 600;
 }
 .about{

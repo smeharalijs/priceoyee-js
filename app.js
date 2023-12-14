@@ -111,8 +111,24 @@ axios.get("https://fakestoreapi.com/products")
     console.log(err);
   });
 
-let arr = [];
+
+
+  const cartData = localStorage.getItem('items');
+const jsonData = JSON.parse(cartData);
+
+let arr;
+if(Array.isArray(jsonData)){
+  arr = [...jsonData]
+
+}else{
+  arr = []
+}
+
+
+
+
 function addToCart(i){
+  data[i].quantity = 1
 arr.push(data[i]);
 console.log(arr);
 

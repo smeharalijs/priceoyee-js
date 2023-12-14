@@ -1,12 +1,24 @@
+
+let addMore = document.querySelector('#addMore');
+addMore.addEventListener('click', function(event){
+    event.preventDefault();
+    window.location = "index.html";
+    localStorage.setItem('items' , JSON.stringify(getData));
+})
+
 let getData = JSON.parse(localStorage.getItem('items'));
 console.log(getData);
 
-
+let counter = document.querySelector(".counter");
 let div = document.querySelector('.render-phones');
+
 function render() {
+    let counters = 0;
+    counter.innerHTML = ""
     if (getData.length > 0) {
         div.innerHTML = "";
         for (var i = 0; i < getData.length; i++) {
+            counters += getData[i].price * getData[i].quantity;
             div.innerHTML +=
                 `<div class="product-container">
         <div class="product-card">
@@ -14,23 +26,56 @@ function render() {
                 <img src="${getData[i].image}"/>
             </div>
             <div class="details">
-                <h4> ${getData[i].title}</h4>
+                <h4> Title : ${getData[i].title}</h4>
+                <h4> Quantity : ${getData[i].quantity}</h4>
                 <div class="price-rating">
-                    <span>$ ${getData[i].price}</span>
+                    <span>Price : $ ${getData[i].price}</span>
                 </div>
+                <div class="price-rating">
+                    <span> Total Price : $ ${getData[i].price * getData[i].quantity}</span>
+                </div>
+
+                <button   onclick="plus(${i})">+</button>
+                <span> ${getData[i].quantity}</span>
+                <button  onclick="minus(${i})">-</button>
                 <div class="buttons">
+                
                 <button class="cartbtn" onclick="deleteCart(${i})">Delete Cart</button>
 
                 </div>
             </div>
         </div>
     </div>`;
+    counter.innerHTML = `Total Amount $ ${counters}`
         }
     } else {
         div.innerHTML = `<h1>Empty Carts</h1>`
     }
 }
 render();
+
+
+
+function plus(i){
+div.innerHTML = "";
+getData[i].quantity += 1;
+render();
+localStorage.setItem('items', JSON.stringify(getData));
+
+}
+
+function minus(i){
+    div.innerHTML = "";
+    getData[i].quantity -= 1;
+render();
+if(getData[i].quantity === 0){
+    div.innerHTML = "";
+    getData.splice(i, 1);
+    render();
+}
+localStorage.setItem('items', JSON.stringify(getData));
+
+    }
 
 function deleteCart(i) {
 
