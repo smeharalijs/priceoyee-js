@@ -694,6 +694,7 @@ footer .container .contact li i{
         padding-top: 3rem;
     }
     .nav-list.active{
+        
         left: 0;
     }
     .section .main{
@@ -902,3 +903,4 @@ a {
 .footer-copyright p {
     margin-top: 10px
 }
+

@@ -96,9 +96,19 @@ break
 }
 
 if (isCredentialsCorrect) {
+
 console.log('You are logged in');
+window.location = "index.html"
+
 } else {
+console.log('Your email address is incorrect');
 console.log('Go to the sign-up page');
+Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Incorrect Email or Password. Please try again.",
+    footer: '<a href="./signup.html">Sign up here</a>'
+  });
 }
 }
 

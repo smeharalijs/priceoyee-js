@@ -113,12 +113,11 @@ axios.get("https://fakestoreapi.com/products")
 
 
 
-  const cartData = localStorage.getItem('items');
-const jsonData = JSON.parse(cartData);
+let Data = JSON.parse(localStorage.getItem('items'));
 
 let arr;
-if(Array.isArray(jsonData)){
-  arr = [...jsonData]
+if(Array.isArray(data)){
+  arr = [...data]
 
 }else{
   arr = []
@@ -128,7 +127,7 @@ if(Array.isArray(jsonData)){
 
 
 function addToCart(i){
-  data[i].quantity = 1
+data[i].quantity = 1
 arr.push(data[i]);
 console.log(arr);
 

@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 
-<h1>Welcome To Sign In</h1>
+    <div class="card">
+        <img src="https://static.priceoye.pk/images/login-header-img.svg" alt="Your Image">
+        <h2>Log in</h2>
+        <p>Enter your phone number for a faster checkout, to track the status of your order and more.</p>
 
-    <form >
-        <input type="email"  id="email1" placeholder="Email">
-        <input type="password" id="password1" placeholder="password" >
+        <form>
+            <input type="text" id="email1" placeholder="Enter Your Email" required>
 
-        <button id="btnSignIn">Sign In</button>
-    </form>
+            <input type="password" id="password1" placeholder="Enter Your Password" required>
 
-
-    <a href="./signup.html">Go to SignUp Page</a><br>
-    <a href="./index.html">Go to Home Page</a>
+        </form>
+        <button class="btn1" id="btnSignIn">Log in</button>
+        
 
 
-<script src="signin.js"></script>    
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="signin.js"></script>
 </body>
+
 </html>

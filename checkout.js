@@ -46,7 +46,7 @@ function render() {
             </div>
         </div>
     </div>`;
-    counter.innerHTML = `Total Amount $ ${counters}`
+    // counter.innerHTML = `Total Amount $ ${counters}`
         }
     } else {
         div.innerHTML = `<h1>Empty Carts</h1>`
